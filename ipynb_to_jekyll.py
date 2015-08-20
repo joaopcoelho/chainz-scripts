@@ -49,7 +49,7 @@ def main():
                 if output['output_type'] == 'execute_result':
                     write("Out[{}]: {}".format(
                         cell['execution_count'],
-                        ''.join(output['text'])
+                        ''.join(output['data'])
                     ))
                 elif output['output_type'] == 'stream':
                     write(''.join(output['text']))
