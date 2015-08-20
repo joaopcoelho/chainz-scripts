@@ -23,7 +23,7 @@ def main():
     out = open(out_filename, 'w')
     write = functools.partial(print, file=out)
 
-    cells = notebook['worksheets'][0]['cells']
+    cells = notebook['cells']
 
     for cell in cells:
         if cell['cell_type'] == 'markdown':

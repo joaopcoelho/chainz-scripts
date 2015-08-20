@@ -1,3 +1,3 @@
-# What is this?
+# Fork of chainz-scripts
 
-Just a repo of useful scripts I use on commandline that I want to share with the world.
+Done to update ipynb_to_jekyll.py 
