@@ -34,8 +34,8 @@ def main():
             write("{% highlight ipy %}")
 
             write("In [{}]: {}".format(
-                cell['prompt_number'],
-                ''.join(cell['input'])
+                cell['execution_count'],
+                ''.join(cell['source'])
             ))
 
             try:
