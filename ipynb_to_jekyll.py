@@ -39,21 +39,21 @@ def main():
             ))
 
             try:
-                assert all(o['output_type'] in ('stream', 'pyout', 'pyerr')
+                assert all(o['output_type'] in ('stream', 'execute_result', 'error')
                            for o in cell['outputs'])
             except AssertionError as e:
                 print(e)
                 IPython.embed()
 
             for output in cell['outputs']:
-                if output['output_type'] == 'pyout':
+                if output['output_type'] == 'execute_result':
                     write("Out[{}]: {}".format(
-                        cell['prompt_number'],
+                        cell['execution_count'],
                         ''.join(output['text'])
                     ))
                 elif output['output_type'] == 'stream':
                     write(''.join(output['text']))
-                elif output['output_type'] == 'pyerr':
+                elif output['output_type'] == 'error':
                     write('\n'.join(strip_colors(o)
                                     for o in output['traceback']))
                 else:
